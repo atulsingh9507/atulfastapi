@@ -31,6 +31,5 @@ class Blog(BaseModel):
     published: Optional[bool]
 
 @app.post('/blog')
-def create_blog(request: Blog):
-    return request
-    return {'data': "blog is created"}
+def create_blog(blog: Blog):
+    return {'data': f"blog is created with title as {blog.title}"}
