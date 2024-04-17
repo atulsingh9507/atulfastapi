@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
+from pydantic import BaseModel
 
 class BlogBase(BaseModel):
     title: str
@@ -23,7 +24,8 @@ class ShowUserBase(UserBase):
         orm_mode = True
 
 class UserCreate(UserBase):
-    password: str
+    password:str
+    
 
 class User(UserBase):
     id: int
@@ -39,4 +41,12 @@ class Blog(BlogBase):
         orm_mode = True
 
 class ShowUser(ShowUserBase):
+
     pass
+
+
+
+class User(BaseModel):
+    name: str
+    email: str
+    password: str    
